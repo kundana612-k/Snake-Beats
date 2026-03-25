@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-pink: #ff00ff;
+  --color-neon-blue: #00f2ff;
+  --color-neon-green: #39ff14;
+  --color-neon-purple: #bc13fe;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans;
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  }
+}
+
+.neon-border {
+  box-shadow: 0 0 5px var(--color-neon-blue), 0 0 20px var(--color-neon-blue);
+  border: 1px solid var(--color-neon-blue);
+}
+
+.neon-text-blue {
+  text-shadow: 0 0 5px var(--color-neon-blue), 0 0 10px var(--color-neon-blue);
+}
+
+.neon-text-pink {
+  text-shadow: 0 0 5px var(--color-neon-pink), 0 0 10px var(--color-neon-pink);
+}
+
+.neon-text-green {
+  text-shadow: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green);
+}
+
+@keyframes pulse-neon {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-neon-pulse {
+  animation: pulse-neon 2s infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
